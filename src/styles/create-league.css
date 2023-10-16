@@ -1,0 +1,23 @@
+.create-league-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.create-league-title {
+    font-size: 1.5rem;
+}
+
+.create-league-overview {
+    font-size: 1.25rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.create-league-overview img{
+    height: 3rem;
+}

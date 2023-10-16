@@ -1,0 +1,63 @@
+.created-league-table-wrapper {}
+
+tr {
+  text-align: center;
+}
+
+.created-league-table {
+  width: calc(100% - 12px);
+}
+
+
+.created-league-table-wrapper table {
+  border-collapse: collapse;
+  margin: 8px;
+  padding-right: 4px;
+}
+
+.created-league-table-wrapper td,
+th {
+  text-align: center;
+  padding: 2px;
+  width: auto;
+  border: 0;
+}
+
+.created-table-index{
+  min-width: 1rem;
+}
+
+.created-league-table-team-column {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+.created-league-table-img {
+  width: 2rem;
+  height: 2rem;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .created-league-table-team-name {
+    display: none;
+  }
+
+
+  .created-league-index {
+    
+    display: none;
+  }
+
+}
+
+.created-league-table-title {
+  text-align: center;
+}

@@ -1,0 +1,94 @@
+.created-league-settings{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.created-league-settings-title{
+  text-align: center;
+}
+
+.created-league-settings-card-wrapper {
+  height: 100%;
+  }
+
+  .created-league-settings-card-image {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .created-league-settings-card-image img {
+    width: 8rem;
+  }
+
+  .created-league-settings-card {
+    background-color: white;
+    border-radius: 0.25rem;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .created-league-settings-card-content {
+    position: relative;
+    padding: 16px 16px 16px 16px;
+    margin: 8px 8px 8px 8px;
+  }
+
+  .card_content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .card_content::-webkit-scrollbar-track {
+    box-shadow: 0;
+    border-radius: 0;
+  }
+
+  .card_content::-webkit-scrollbar-thumb {
+    background: #c89b3f;
+    border-radius: 15px;
+  }
+
+  .created-league-settings-card-title {
+    position: relative;
+    margin: 0 0 0.5rem;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .created-league-settings-card-title::after {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c89b3f;
+    content: "";
+  }
+
+  hr {
+    margin: 0.5rem auto;
+    width: 50px;
+    border-top: 2px solid #c89b3f;
+  }
+
+  .created-league-settings-card-text p {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .created-league-settings-card-text p:last-child {
+    margin: 0;
+  }
+
+  .created-league-settings-card-secondary-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }

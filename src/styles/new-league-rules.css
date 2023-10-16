@@ -1,0 +1,72 @@
+.new-leaague-rules-form{
+    padding: 1  ;
+}
+
+.new-leagure-rules-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.new-league-rules-wrapper{
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.new-league-rules-fieldset-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.new-league-rules-fieldset-structure{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.new-league-rules-form fieldset{
+    font-size: 1.5rem;
+}
+
+.new-league-rules-fieldset-tie-braker{
+    display: flex;
+    padding-left: 1rem;
+    justify-content: space-around;
+}
+
+.standard-input{
+    font-size: 1.5rem;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    border: 0;
+    width: 200px; 
+ 
+    margin: 2px; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+
+.standard-input-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+@media only screen and (max-width: 600px){
+    .new-league-rules-fieldset-tie-braker,
+    .new-league-rules-fieldset-structure,
+    .new-league-rules-fieldset-info{
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+
+}

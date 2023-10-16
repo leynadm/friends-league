@@ -1,0 +1,22 @@
+.standard-input-number-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+       
+}
+
+.standard-input-number{
+    font-size: 2rem;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    border: 0;
+    
+}
+
+
+
+.standard-input-number-wrapper label{
+    font-size: 1.25rem;
+}

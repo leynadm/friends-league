@@ -1,0 +1,97 @@
+.team-selection-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+}
+
+.team-selection{
+  padding-top: 48px;
+}
+
+.team-selection-option-btn {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  letter-spacing: 0;
+  line-height: 1em;
+  opacity: 1;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  z-index: 0;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  margin: 0.5rem;
+}
+
+.team-selection-option-btn:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.team-selection-option-btn:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.team-selection-option-btn:after {
+  background-color: #FFFFFF;
+}
+
+.team-selection-option-btn span {
+  z-index: 1;
+  position: relative;
+}
+
+.team-selection-option-name{
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .team-selection-wrapper {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+}
+
+.team-selection-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.team-selection-option-image {
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  z-index: 1;
+}

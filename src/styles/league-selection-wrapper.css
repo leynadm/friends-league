@@ -1,0 +1,14 @@
+.league-selection-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+}
+
+.league-selection-title{
+    color: black;
+    justify-self: center;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 2rem;
+}

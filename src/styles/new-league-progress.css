@@ -1,0 +1,27 @@
+.new-league-progress{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    justify-self: center;    
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 0;
+    width: 80%;
+
+}
+
+.new-league-progress hr {
+    flex: 1; /* Allow <hr> elements to expand and fill available space */
+    height: 0; /* Set height to 0 to make it horizontal */
+  }
+
+.new-league-progress-item{
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

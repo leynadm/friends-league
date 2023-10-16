@@ -1,0 +1,23 @@
+.my-leagues-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.my-leagues-title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .my-leagues-wrapper {
+      flex-direction: column;
+  
+    }
+  
+  
+  }

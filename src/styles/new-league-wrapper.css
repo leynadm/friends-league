@@ -1,0 +1,11 @@
+.new-league-wrapper {
+
+    display: grid;
+}
+
+.new-league-steps-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2;
+    padding-bottom: 1rem;
+}

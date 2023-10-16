@@ -1,0 +1,25 @@
+.league-invitation{
+    height: 100%;
+    width: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 100px,
+        white 100px,
+        white 200px
+      );
+      overflow: auto;    
+}
+
+.league-invitation-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.league-invitation-promo{
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+
+}

@@ -1,0 +1,18 @@
+.created-league-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .created-league-wrapper {
+      display: flex;
+      flex-direction: column;
+  
+    }
+  
+  
+  }
