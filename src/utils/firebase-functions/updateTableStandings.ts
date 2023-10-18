@@ -21,6 +21,10 @@ export async function updateTableStandings(
       const matchFixture = value[index];
       //console.log(matchFixture);
 
+      if(matchFixture.homeGoals === null || matchFixture.awayGoals===null){
+        return
+      }
+      
       if (matchFixture.simulated === true) {
         
         const homeTeamStanding = standings.find(

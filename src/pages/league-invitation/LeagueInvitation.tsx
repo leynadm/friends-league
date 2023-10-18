@@ -31,14 +31,19 @@ function LeagueInvitation() {
     navigate("/login");
   }
 
-  function handleJoinLeagueClick(){
-    
-    if(id){
-      registerUserForLeague(currentUser.uid,id,chosenTeam)
-      navigate("/home/my-leagues")
+  async function handleJoinLeagueClick() {
+    if (id) {
+      // Assuming that `registerUserForLeague` returns a promise
+      try {
+        await registerUserForLeague(currentUser.uid, id, chosenTeam);
+        navigate("/home/my-leagues");
+      } catch (error) {
+        // Handle any errors that might occur during registration
+        console.error("Error during registration:", error);
+      }
     }
-
   }
+  
 
 
   useEffect(() => {
@@ -108,11 +113,11 @@ function LeagueInvitation() {
             ) : league.numberOfParticipants===league.competingUsers.length?(
               <div>All places have been taken for this competition.</div>
             ) : currentUser ? (
-              <button onClick={handleJoinLeagueClick} disabled={chosenTeam.name==="Your Team"}>Join the League!</button>
+              <button onClick={()=>handleJoinLeagueClick()} disabled={chosenTeam.name==="Your Team"}>Join the League!</button>
             ) : (
               <div>
               <div>You need to log in first in order to join a league.</div>
-              <button onClick={navigateLogIn}>Sign In!</button>
+              <button onClick={()=>navigateLogIn}>Sign In!</button>
               </div>
             )}
           </div>

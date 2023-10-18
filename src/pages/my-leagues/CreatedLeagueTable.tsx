@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import { LeagueCardInterface } from "../../interfaces/LeagueCardInterface";
 import "../../styles/created-league-table.css"
 interface CreatedLeagueInterface {
   leagueData: LeagueCardInterface;
 }
+
 function CreatedLeagueTable({ leagueData }: CreatedLeagueInterface) {
+
+
+
 
   return (
     <>
+    
       <div className="created-league-table-wrapper">
       <h2 className="created-league-table-title">League Table</h2>
           <table className="created-league-table">
@@ -38,6 +44,7 @@ function CreatedLeagueTable({ leagueData }: CreatedLeagueInterface) {
         </table>
         
       </div>
+       
     </>
   );
 }

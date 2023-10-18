@@ -11,8 +11,8 @@ function ContentWrapper({ sidebarStatus, setSidebarStatus }: SidebarInterface) {
     >
       <Routes>
         <Route path="/create-league/" index element={<NewLeague />} />
-        <Route path="/my-leagues/" index element={<MyLeagues />} />
-        <Route path="/my-leagues/created-league/:id" element={<CreatedLeague />} />
+        <Route path="/my-leagues/" element={<MyLeagues />} />
+        <Route path="/my-leagues/created-league/:leagueId" element={<CreatedLeague />} />
         
       </Routes>
     </div>

@@ -5,6 +5,9 @@ import ChosenTeamInterface from "./ChosenTeamInterface";
 import TeamTableDataInterface from "./TeamTableDataInterface";
 export interface LeagueCardInterface {
   fullSeasonFixtures: fullSeasonFixturesInterface;
+  fixtureCompletion:{
+    [key:string]:boolean
+  }
   timestamp: Timestamp;
   createdAt: Timestamp;
   chosenLeague: ChosenLeagueInterface;

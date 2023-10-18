@@ -3,12 +3,9 @@ import { db } from "../../config/firebase";
 import fixtureInterface from "../../interfaces/fixtureInterface";
 import TeamTableDataInterface from "../../interfaces/TeamTableDataInterface";
 
-async function updateFixtureResults(documentId: string, fixtureResults: fixtureInterface[],fixtureNumber:string,standings:TeamTableDataInterface[]) {
+async function updateFixtureResults(documentId: string, fixtureResults: fixtureInterface[],fixtureNumber:string,standings:TeamTableDataInterface[] ,updatedFixtureCompletion:{[key:string]:boolean}) {
   const leagueDocId = doc(db, "leagues", documentId);
-
-  console.log('logging standings in updateFixtureResults:')
-  console.log(standings)
-
+  
   // Fetch the existing data
   const leagueDoc = await getDoc(leagueDocId);
   const existingData = leagueDoc.data();
@@ -24,11 +21,15 @@ async function updateFixtureResults(documentId: string, fixtureResults: fixtureI
     const updatedData: DocumentData = {
       ...existingData,
       fullSeasonFixtures: updatedFullSeasonFixtures,
-      teamTable:standings
+      teamTable:standings,
+      fixtureCompletion:updatedFixtureCompletion
     };
 
     // Update the document directly
     await updateDoc(leagueDocId, updatedData);
+    console.log('FINALLY UPDATED THE FIXTURES!')
+    return Promise.resolve()
+
   }
 }
 export default updateFixtureResults

@@ -18,13 +18,17 @@ export async function completeFixtureMatch(
   
   const queriedLeagueData: LeagueCardInterface | undefined = leagueDoc.data() as LeagueCardInterface;
 
-  console.log(clientLeagueData)
-  console.log(clientLeagueData)
+  console.log(fixtureNumber)
   if(!clientLeagueData){
     console.log('Returning as league data doesnt exist')
     return
   }
 
+  const updatedFixtureCompletion = {
+    ...clientLeagueData.fixtureCompletion,
+    [fixtureNumber]: true, // Modify the value of 'Fixture 2'
+  };
+  
   const competingTeamsArr = [];
 
   for (let index = 0; index < clientLeagueData.competingTeams.length; index++) {
@@ -93,7 +97,8 @@ export async function completeFixtureMatch(
   const standings = updateTableStandings(fixtureNumber,clientLeagueData)
   
   if (clientLeagueData.leagueId && standings) {
-    updateFixtureResults(clientLeagueData.leagueId, newFixtureResults, fixtureNumber,standings);
+    console.log('calling updateFixtureResults')
+    await updateFixtureResults(clientLeagueData.leagueId, newFixtureResults, fixtureNumber,standings,updatedFixtureCompletion);
   }
  
 }
@@ -273,6 +278,9 @@ function updateTableStandings(
           homeTeamStanding.GA += matchFixture.awayGoals;
           awayTeamStanding.GF += matchFixture.awayGoals;
           awayTeamStanding.GA += matchFixture.homeGoals;
+
+          homeTeamStanding.GD = homeTeamStanding.GF-homeTeamStanding.GA
+          awayTeamStanding.GA = awayTeamStanding.GF-awayTeamStanding.GA
 
           if (matchFixture.homeGoals > matchFixture.awayGoals) {
             homeTeamStanding.W++;

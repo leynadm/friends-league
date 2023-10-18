@@ -26,10 +26,7 @@ function MyLeagues() {
             key={index}
             league={league}
             onClick={() =>
-              navigate(`created-league/${league.leagueId}`, {
-                state: { league: league },
-              })
-            }
+              navigate(`created-league/${league.leagueId}`)}
           />
         ))}
       </div>

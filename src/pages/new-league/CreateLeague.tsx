@@ -86,6 +86,7 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
           }
       
           let isPlayer = false;
+          
 
           if (half1[i].name === chosenTeam.name) {
             playerHomeObj = {
@@ -94,12 +95,14 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
               isPlayer: true,
             };
             isPlayer = true;
+            
           } else if (half2[i].name === chosenTeam.name) {
             playerAwayObj = {
               userId: currentUser.uid,
               userImage: "",
               isPlayer: true,
             };
+
             isPlayer = true;
           }
 
@@ -107,8 +110,8 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
             roundFixtures.push({
               home: half1[i].name,
               away: half2[i].name,
-              homeGoals: 0,
-              awayGoals: 0,
+              homeGoals: null,
+              awayGoals: null,
               homeCoefficient: half1[i].rating,
               awayCoefficient: half2[i].rating,
               homeImage: half1[i].image,
@@ -123,8 +126,8 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
             secondRoundFixtures.push({
               home: half2[i].name,
               away: half1[i].name,
-              homeGoals: 0,
-              awayGoals: 0,
+              homeGoals: null,
+              awayGoals: null,
               homeCoefficient: half2[i].rating,
               awayCoefficient: half1[i].rating,
               homeImage: half2[i].image,
@@ -132,8 +135,8 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
               homeAdvantage: half2[i].advantage,
               awayAdvantage: half1[i].advantage,
               simulated:false,
-              playerHome:playerHomeObj,
-              playerAway:playerAwayObj,
+              playerHome:playerAwayObj,
+              playerAway:playerHomeObj,
               isPlayer:isPlayer
             });
             homeAwayAssignment = "away";
@@ -141,8 +144,8 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
             roundFixtures.push({
               home: half2[i].name,
               away: half1[i].name,
-              homeGoals: 0,
-              awayGoals: 0,
+              homeGoals: null,
+              awayGoals: null,
               homeCoefficient: half2[i].rating,
               awayCoefficient: half1[i].rating,
               homeImage: half2[i].image,
@@ -150,15 +153,15 @@ function CreateLeague({ newLeagueSettings }: NewLeagueSettingsInterface) {
               homeAdvantage: half2[i].advantage,
               awayAdvantage: half1[i].advantage,
               simulated:false,
-              playerHome:playerHomeObj,
-              playerAway:playerAwayObj,
+              playerHome:playerAwayObj,
+              playerAway:playerHomeObj,
               isPlayer:isPlayer
             });
             secondRoundFixtures.push({
               home: half1[i].name,
               away: half2[i].name,
-              homeGoals: 0,
-              awayGoals: 0,
+              homeGoals: null,
+              awayGoals: null,
               homeCoefficient: half1[i].rating,
               awayCoefficient: half2[i].rating,
               homeImage: half1[i].image,
