@@ -1,10 +1,11 @@
 .created-league-wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.25fr 1.25fr 1.5fr;
     justify-content: center;
-    
-}
-
+    height: 100%;
+    width: 100%;
+      overflow: auto;    
+}   
 
 @media only screen and (max-width: 600px) {
 

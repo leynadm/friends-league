@@ -1,0 +1,130 @@
+.created-league-player-team-resume{
+    display: flex;
+    justify-content: space-around;
+}
+
+.created-league-player-data-wrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.created-league-player{
+margin: 1rem;
+}
+
+.created-league-team-name{
+    background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 100px,
+        white 100px,
+        white 200px
+      );
+      height: 50px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+}
+
+.created-league-team-name{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.created-league-team-image{
+    padding: 1rem;
+}
+
+.created-league-team-presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.created-league-player-data-fixture-history{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+ 
+.created-league-player-data-fixture-history-wrapper{
+    overflow: auto;
+    height: 38rem;
+    
+}
+
+.created-league-player-data-fixture-history-number{
+    width: 100%;
+    text-align: left;
+}
+
+.created-league-player-data-fixture-history-result-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    width: 100%;
+    padding: 8px;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.fixture-result-value.L{
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fixture-result-value.D{
+    background-color: orange;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fixture-result-value.W{
+    background-color: lightgreen;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.created-league-player-data-fixture-history-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem
+
+}
+
+.created-league-player-data-fixture-history-result img{
+    width: 2rem;
+}
+
+
+.fixture-result-value{
+    justify-self: flex-end;
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .created-league-table-team-name {
+      display: none;
+    }
+  
+  
+    .created-league-index {
+      
+      display: none;
+    }
+  
+  }
+  

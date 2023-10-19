@@ -5,32 +5,32 @@ import "../../styles/created-league.css"
 import { LeagueCardInterface } from "../../interfaces/LeagueCardInterface";
 import CreatedLeagueTable from "./CreatedLeagueTable";
 import CreatedLeaguePlayerData from "./CreatedLeaguePlayerData";
-import getSpecificLeague from "../../utils/firebase-functions/getSpecificLeague";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "../../config/firebase";
 function CreatedLeague(){
 
   const { leagueId } = useParams();
 
-
   const [league, setLeague] = useState<LeagueCardInterface | null>(null);
-
-  const handleRefresh = async () => {
-    try {
-      if(leagueId){
-        const data = await getSpecificLeague(leagueId);
-        setLeague(data);
-      }
-    } catch (error) {
-      console.error('Error fetching league data', error);
-    }
-  }
 
   useEffect(()=>{
 
   },[league])
 
-  useEffect(()=>{
-    handleRefresh()
-  },[leagueId])
+  useEffect(() => {
+    // Function to handle changes when the Firestore document updates
+    const unsubscribe = onSnapshot(doc(db, "leagues", `${leagueId}`), (snapshot) => {
+      const data = { ...snapshot.data(), leagueId } as LeagueCardInterface; 
+      if (data) {
+        setLeague(data);
+      }
+    });
+
+    // Cleanup function to unsubscribe when the component unmounts
+    return () => {
+      unsubscribe();
+    };
+  }, [leagueId]); // Listen for changes when leagueId changes
 
 
   if (!league) {
@@ -43,7 +43,7 @@ function CreatedLeague(){
         <div className="created-league-wrapper">
  
           <div className="created-league-player">
-            <CreatedLeaguePlayerData/>
+            <CreatedLeaguePlayerData leagueData={league as LeagueCardInterface}/>
           </div>
 
           <div className="created-league-standings">
@@ -51,7 +51,7 @@ function CreatedLeague(){
             <CreatedLeagueTable leagueData={league as LeagueCardInterface}/>
    
          </div>
-            <FixtureBoard leagueData={league as LeagueCardInterface} handleRefresh={handleRefresh} setLeague={setLeague}/>
+            <FixtureBoard leagueData={league as LeagueCardInterface} setLeague={setLeague}/>
 
             </div>
    

@@ -4,6 +4,7 @@ interface ChosenTeamInterface {
   id: string;
   rating: number;
   advantage: number;
+  shortName:string
 }
 
 export default ChosenTeamInterface;
@@ -14,5 +15,6 @@ export const initialChosenTeam: ChosenTeamInterface = {
   rating: 0,
   advantage: 0,
   id: "",
+  shortName:''
 };
 

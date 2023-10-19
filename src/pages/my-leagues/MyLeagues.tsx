@@ -17,10 +17,13 @@ function MyLeagues() {
 
   return (
     <>
+
+      <div className="my-leagues-wrapper">
       <h2 className="my-leagues-title">
         Your leagues <i className="bx bxs-hourglass-top"></i>
       </h2>
-      <div className="my-leagues-wrapper">
+
+<div className="my-leagues-content">
         {userLeagues.map((league: LeagueCardInterface, index: number) => (
           <LeagueCard
             key={index}
@@ -29,6 +32,7 @@ function MyLeagues() {
               navigate(`created-league/${league.leagueId}`)}
           />
         ))}
+     </div>
       </div>
     </>
   );

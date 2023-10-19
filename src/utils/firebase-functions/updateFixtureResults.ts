@@ -27,7 +27,6 @@ async function updateFixtureResults(documentId: string, fixtureResults: fixtureI
 
     // Update the document directly
     await updateDoc(leagueDocId, updatedData);
-    console.log('FINALLY UPDATED THE FIXTURES!')
     return Promise.resolve()
 
   }

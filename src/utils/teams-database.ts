@@ -6,6 +6,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Farsenal.svg?alt=media&token=dc1e6d7f-9fdf-409b-86c1-636e451775aa",
     advantage:0.68,
+    shortName:'Arsenal',
     },
 
   {
@@ -15,6 +16,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Faston-villa.svg?alt=media&token=ac4aad73-b9b2-4551-9419-84570b2d1188",
       advantage:0.47,
+      shortName:'Aston Villa',
     },
 
   {
@@ -24,6 +26,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fbournemouth.svg?alt=media&token=2853003f-f306-42af-8f84-7edfb2a0ce57",
       advantage:0.28,
+      shortName:'Bournemouth',
     },
 
   {
@@ -33,6 +36,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fbrentford.svg?alt=media&token=112c3c7b-7ad3-4033-b460-b9d745cf3a65",
       advantage:0.38,
+      shortName:'Brentford',
     },
 
   {
@@ -51,6 +55,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fburnley.svg?alt=media&token=3df7b47e-5960-4801-a56b-8af45f41a478",
       advantage:0.63,
+      shortName:'Brighton',
     },
 
   {
@@ -60,6 +65,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fchelsea.svg?alt=media&token=f540a75c-ea41-4f45-be23-958311685d8b",
       advantage:0.29,
+      shortName:'Chelsea',
     },
 
   {
@@ -69,6 +75,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fcrystal-palace.svg?alt=media&token=34268785-1c55-442a-ab21-aafede1f23b2",
       advantage:0.29,
+      shortName:'Crystal Palace',
     },
 
   {
@@ -78,6 +85,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Feverton.svg?alt=media&token=8ed35611-f145-41f2-ba11-261792d240c7",
       advantage:0.21,
+      shortName:'Everton',
     },
 
   {
@@ -87,6 +95,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Ffullham.svg?alt=media&token=762d2549-0a99-4c01-ad2c-0aad3333ba84",
       advantage:0.39,
+      shortName:'Fullham',
     },
 
   {
@@ -96,6 +105,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fliverpool.svg?alt=media&token=7e13d563-5ca3-45ad-8d2f-b3fe90f8336a",
       advantage:0.50,
+      shortName:'Liverpool',
     },
 
   {
@@ -105,6 +115,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fluton-town.svg?alt=media&token=5a8960de-2a39-4379-8ad2-bfff9017ba36",
       advantage:0.46,
+      shortName:'Luton Town',
     },
 
   {
@@ -114,6 +125,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fmanchester-city.svg?alt=media&token=d18861bb-494c-4d25-bfbd-5cd076f88eb4",
       advantage:0.74,
+      shortName:'Manchester City',
     },
 
   {
@@ -123,6 +135,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fmanchester-united.png?alt=media&token=12200015-923d-412e-98f9-f19774912640",
       advantage:0.61,
+      shortName:'Manchester United',
     },
 
   {
@@ -132,6 +145,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fnewcastle.png?alt=media&token=b3fc4c02-1ac7-4623-9b90-fb36551a1ed3",
       advantage:0.50,
+      shortName:'Newcastle',
     },
 
   {
@@ -141,6 +155,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fnothingham-forest.svg?alt=media&token=75869518-f55e-403e-9870-94d37412648b",
       advantage:0.24,
+      shortName:'Nothingham',
     },
 
   {
@@ -150,6 +165,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fsheffield-united.svg?alt=media&token=48f8d29a-820c-43f0-8790-c43f72c34c91",
       advantage:0.61,
+      shortName:'Sheffield',
     },
 
   {
@@ -159,6 +175,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Ftottenham.svg?alt=media&token=5bd739ca-b7aa-4f69-8ea7-bb67303faea2",
       advantage:0.48,
+      shortName:'Tottenham',
     },
 
   {
@@ -168,6 +185,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fwestham-united.svg?alt=media&token=d532b678-f035-4516-bd0e-5a4aca55c13f",
       advantage:0.29,
+      shortName:'West Ham',
     },
 
   {
@@ -177,6 +195,7 @@ export const premier_league_teams = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/friends-league-51148.appspot.com/o/premier_league_logos%2Fwolverhampton.svg?alt=media&token=ae172f27-f5ea-4b88-814c-67704c23dafe",
       advantage:0.29,
+      shortName:'Wolves',
     },
 ];
 

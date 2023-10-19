@@ -1,23 +1,32 @@
-.my-leagues-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.my-leagues-wrapper {
 
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(45deg,
+      #f5f5f5,
+      #f5f5f5 100px,
+      white 100px,
+      white 200px);
 }
 
-.my-leagues-title{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.my-leagues-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-leagues-title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
 
-    .my-leagues-wrapper {
-      flex-direction: column;
-  
-    }
-  
-  
+  .my-leagues-wrapper {
+    flex-direction: column;
+
   }
+
+
+}

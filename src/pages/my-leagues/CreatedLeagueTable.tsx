@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { LeagueCardInterface } from "../../interfaces/LeagueCardInterface";
 import "../../styles/created-league-table.css"
 interface CreatedLeagueInterface {

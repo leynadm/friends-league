@@ -1,16 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { LeagueCardInterface } from "../../interfaces/LeagueCardInterface";
 import "../../styles/fixture-board.css";
 interface CreatedLeagueInterface {
   leagueData: LeagueCardInterface;
-  handleRefresh:()=>void;
   setLeague: (leagueData: LeagueCardInterface | null) => void;
 }
 import { AuthContext } from "../../context/AuthContext";
 import { saveUserFixtureResult } from "../../utils/firebase-functions/saveUserFixtureResult";
 import { completeFixtureMatch } from "../../utils/firebase-functions/completeFixtures";
 
-function FixtureBoard({ leagueData,handleRefresh,setLeague }: CreatedLeagueInterface) {
+function FixtureBoard({ leagueData,setLeague }: CreatedLeagueInterface) {
   const [currentPage, setCurrentPage] = useState(1);
   const fixturesPerPage = 1;
   const { currentUser } = useContext(AuthContext);
@@ -23,46 +22,39 @@ function FixtureBoard({ leagueData,handleRefresh,setLeague }: CreatedLeagueInter
   ) => {
 
     const updatedResults = {...leagueData}
-    // Ensure the fixtureKey exists in the updatedResults
-    if (!updatedResults.fullSeasonFixtures[fixtureKey]) {
-      updatedResults.fullSeasonFixtures[fixtureKey] = [];
-    }
-
+    
     if (sideGoals === "home") {
       // Update the specific key with the new values
       updatedResults.fullSeasonFixtures[fixtureKey][index] = {
         ...updatedResults.fullSeasonFixtures[fixtureKey][index],
-        homeGoals: parseInt(goals) || null,
+        homeGoals: parseInt(goals),
+      
       };
+      console.log('logging homeGoals:')
+      console.log(goals)
+      console.log('logging parseInt homeGoals:')
+      
+      console.log(parseInt(goals))
+    
     } else {
       updatedResults.fullSeasonFixtures[fixtureKey][index] = {
         ...updatedResults.fullSeasonFixtures[fixtureKey][index],
-        awayGoals: parseInt(goals) || null,
+        awayGoals: parseInt(goals),
       };
+      console.log('logging awayGoals:')
+      console.log(goals)
+      console.log('logging parseInt awayGoals:')
+      
+      console.log(parseInt(goals))
     }
 
-    // Check if both homeGoals and awayGoals are not null
-
-    if (
-      updatedResults.fullSeasonFixtures[fixtureKey][index].homeGoals !== null &&
-      updatedResults.fullSeasonFixtures[fixtureKey][index].awayGoals !== null
-    ) {
-      updatedResults.fullSeasonFixtures[fixtureKey][index] = {
-        ...updatedResults.fullSeasonFixtures[fixtureKey][index],
-        simulated: true,
-      };
-    }
-
-    //console.log(updatedResults)
-    // Set the state with the updated object
     setLeague(updatedResults);
   };
 
   async function handleSaveUserFixtureResult() {
-
-    if (leagueData.leagueId) {
-      await saveUserFixtureResult(leagueData.leagueId, leagueData.fullSeasonFixtures);
-      handleRefresh()
+    if (leagueData.leagueId) {  
+      console.log('saving saveuserresult:')
+      await saveUserFixtureResult(leagueData.leagueId, leagueData.fullSeasonFixtures,`Fixture ${currentPage}`);
     }
 
   }
@@ -103,8 +95,6 @@ function FixtureBoard({ leagueData,handleRefresh,setLeague }: CreatedLeagueInter
         `Fixture ${currentPage}`
       );
 
-      handleRefresh()
-        console.log('HANDLE REFRESH WAS RAN!')
     }
   }
 
@@ -137,25 +127,27 @@ function getUserCompletedMatches(){
       <div className="fixture-board-wrapper">
         <div className="fixture-board">
           {fixtureKeys.slice(startIndex, endIndex).map((fixtureKey) => (
-            <div key={fixtureKey}>
+            <div key={fixtureKey} className="fixture-board-split">
               <div className="fixture-title-wrapper">
+                
                 <button
                   className="fixture-board-pagination-btn"
                   onClick={handlePreviousPage}
                   disabled={currentPage === 1}
                 >
                   Back
-                </button>
+                </button> 
                 <h2 className="fixture-title">{fixtureKey}</h2>
+                
                 <button
                   className="fixture-board-pagination-btn"
                   onClick={handleNextPage}
                   disabled={currentPage === totalPages}
                 >
                   Next
-                </button>
+                </button> 
               </div>
-              <div>
+              <div className="fixture-board-entries">
                 {leagueData.fullSeasonFixtures[fixtureKey].map(
                   (fixture, index) => (
                     <div key={index} className="fixture-entry">
@@ -245,12 +237,26 @@ function getUserCompletedMatches(){
             )
           )}
 
+
+
+
           { leagueData.numberOfParticipants ===
             leagueData.competingUsers.length &&
-            leagueData.fixtureCompletion[`Fixture ${currentPage}`] === false ? (
+            leagueData.fixtureCompletion[`Fixture ${currentPage}`] === false 
+            
+            
+            ? (
             <div>
-              <button onClick={() => handleSaveUserFixtureResult()}>
-                Save User Result
+              <button onClick={() => handleSaveUserFixtureResult()} disabled={
+!leagueData.fullSeasonFixtures[`Fixture ${currentPage}`].some(
+  (fixture) =>
+    ((fixture.playerHome.userId === currentUser.uid ||
+    fixture.playerAway.userId === currentUser.uid) 
+     && fixture.simulated===false
+))
+
+              }>
+                Save Result
               </button>
             </div>
           ) :  (

@@ -39,7 +39,7 @@ async function registerUserForLeague(
   console.log(leagueData);
 
   const competingTeamObj = {
-    playedId: userId,
+    playerId: userId,
     playerTeam: chosenTeam,
   };
 

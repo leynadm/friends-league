@@ -280,7 +280,7 @@ function updateTableStandings(
           awayTeamStanding.GA += matchFixture.homeGoals;
 
           homeTeamStanding.GD = homeTeamStanding.GF-homeTeamStanding.GA
-          awayTeamStanding.GA = awayTeamStanding.GF-awayTeamStanding.GA
+          awayTeamStanding.GD = awayTeamStanding.GF-awayTeamStanding.GA
 
           if (matchFixture.homeGoals > matchFixture.awayGoals) {
             homeTeamStanding.W++;
